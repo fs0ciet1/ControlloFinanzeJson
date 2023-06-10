@@ -1,2 +1,4 @@
-public class Utente {
+public class Utente
+{
+
 }
