@@ -1,22 +1,32 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class Menu
 {
+    //=================================== ATTRIBUTI ===================================//
+
+    //creo ma non inizializzo il mio arraylist di utenti
+    private ArrayList<Utente> listaUtenti;
+
+    //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public  Menu()
     {
-        //instanzio variabile di tipo utente per prova del programma
-        //Utente utenteProva = new  Utente ("pippo", "123", 500,00);
+        //inizializzo un arraylist di tipo Utente perchè inserirò una lista di utenti
+        this.listaUtenti = new ArrayList<Utente>();
 
-        //instanzio arraylist per l'aggiunta degli utenti
-        ArrayList<Utente> listaUtenti=  new ArrayList<>();
+        //inizializzo un utente di prova che poi inserisco nel mio arraylist
+        Utente utenteProva = new  Utente ("pippo", "123", 500.00);
 
-        //aggiungo all'array il primo utente
-        //listaUtenti.add(utenteProva);
+        //aggiungio un utente di prova dentro il mio arraylist
+        listaUtenti.add(utenteProva);
+        loginRegistrazioni();
     }
     //creazione del menu
-    public void loginRegistrazioni(ArrayList<Utente>listaUtenti)
+    public void loginRegistrazioni()
     {
+
         boolean controlloDiRitorno = false;
         while(true)
         {
@@ -37,16 +47,16 @@ public class Menu
                     String inserisciPsw =  inserimentoCredenziali.nextLine();
 
                     //controllo che le funzione passate dalla classe Utente restituiscano effettivamente true per poter accedere
-                    /*if(utenteProva.login(inserisciNome, inserisciPsw, ArrayList<Utente>listaUtenti) == true)
+                    if(Utente.login(inserisciNome, inserisciPsw, listaUtenti) == true)
                     {
                         System.out.println("LOGIN EFFETTUATO CON SUCCESSO");
-                        controlloCredenziali=true;
+                        controlloDiRitorno=true;
                     }
                     else
                     {
                         System.out.println("DATI NON VALIDI");
 
-                    }*/
+                    }
                 }
                 //richiamo la classe saldo per farmi stampare il saldo attuale dell'utente (inserito al momento della registrazione nella classe Utente)
                 mostraSaldo();

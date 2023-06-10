@@ -15,13 +15,13 @@ import java.util.ArrayList;
 public class Utente
 {
 
-    //=================================== ATTRIBUTI ===================================
+    //=================================== ATTRIBUTI ===================================//
     private String nome;
     private String password;
     private Double saldo;
     private ArrayList<Movimento> movimenti;             //creo ma non inizializzo il mio arraylist di movimenti
 
-    //=================================== COSTRUTTORE DI DEFAULT ===================================
+    //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public Utente(String nome, String password , Double saldo)
     {
         this.nome=nome;
@@ -30,10 +30,10 @@ public class Utente
         this.movimenti = new ArrayList<Movimento>();    //inizializzo un arraylist di movimenti vuoto
     }
 
-    //=================================== FUNZIONE LOGIN ===================================
+    //=================================== FUNZIONE LOGIN ===================================//
     //prendo in input i valori nome, passw e la lista di utenti e cerco nell'arrayList se trovo un utente corrispondente
     //quindi do in output true se trovo questa corrispondenza, false altrimenti
-    public Boolean login(String nomeInserito,String passwordInserita, ArrayList<Utente> listaUtenti)
+    public static Boolean login(String nomeInserito,String passwordInserita, ArrayList<Utente> listaUtenti)
     {
         for (int i = 0; i <listaUtenti.size(); i++)
         {
@@ -45,7 +45,7 @@ public class Utente
         return false;
     }
 
-    //=================================== GETTER ===================================
+    //=================================== GETTER ===================================//
     public String getNome()
     {
         return nome;
@@ -63,7 +63,7 @@ public class Utente
         return movimenti;
     }
 
-    //=================================== SETTER ===================================
+    //=================================== SETTER ===================================//
     public void setNome(String nome) {
         this.nome = nome;
     }
