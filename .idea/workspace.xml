@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="Creazione progetto ControlloFinanzze">
+    <list default="true" id="a9fa7f7c-d87a-4d08-aad6-0533ba15b062" name="Changes" comment="creazioni variabili nel main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
@@ -18,6 +18,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="ControlloFinanze/master" />
   </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
@@ -40,7 +43,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "editing.templates"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686397140615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="creazioni variabili nel main">
+      <created>1686400186055</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686400186055</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +138,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creazione progetto ControlloFinanzze" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione progetto ControlloFinanzze" />
+    <MESSAGE value="instanza variabili nel main" />
+    <MESSAGE value="creazioni variabili nel main" />
+    <option name="LAST_COMMIT_MESSAGE" value="creazioni variabili nel main" />
   </component>
 </project>
