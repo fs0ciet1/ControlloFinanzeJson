@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9fa7f7c-d87a-4d08-aad6-0533ba15b062" name="Changes" comment="creazioni variabili nel main">
+    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu">
+      <changelist_data name="virus4all" email="laurentiustoenescu94@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/src/Movimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +22,17 @@
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="ControlloFinanze/master" />
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
+        <option value="fs0ciet1 &lt;erreg97@gmail.com&gt;" />
+        <option value="virus" />
+      </list>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
@@ -30,6 +40,8 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,13 +52,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "editing.templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,45 +81,10 @@
       <option name="project" value="LOCAL" />
       <updated>1686397140615</updated>
     </task>
-    <task id="LOCAL-00003" summary="creazioni variabili nel main">
-      <created>1686400186055</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1686400186055</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="user">
-                    <value>
-                      <list>
-                        <option value="*" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -127,6 +103,11 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="*" />
                 </option>
               </RecentGroup>
@@ -135,11 +116,41 @@
         </entry>
       </map>
     </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creazione progetto ControlloFinanzze" />
-    <MESSAGE value="instanza variabili nel main" />
     <MESSAGE value="creazioni variabili nel main" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazioni variabili nel main" />
+    <MESSAGE value="creazione classe utente con funzione login e creazione  classe movimento" />
+    <MESSAGE value="creazione classe utente con funzione login e creazione classe movimento" />
+    <MESSAGE value="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu" />
   </component>
 </project>

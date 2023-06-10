@@ -1,4 +1,83 @@
+import java.util.ArrayList;
+
+/*                          CLASSE UTENTE
+*   ATTRIBUTI:
+*       - nome
+*       - passoword
+*       - saldo
+*       - movimenti
+*
+*   FUNZIONI:
+*       - login
+*
+*
+*/
 public class Utente
 {
+
+    //=================================== ATTRIBUTI ===================================
+    private String nome;
+    private String password;
+    private Double saldo;
+    private ArrayList<Movimento> movimenti;             //creo ma non inizializzo il mio arraylist di movimenti
+
+    //=================================== COSTRUTTORE DI DEFAULT ===================================
+    public Utente(String nome, String password , Double saldo)
+    {
+        this.nome=nome;
+        this.password=password;
+        this.saldo=saldo;
+        this.movimenti = new ArrayList<Movimento>();    //inizializzo un arraylist di movimenti vuoto
+    }
+
+    //=================================== FUNZIONE LOGIN ===================================
+    //prendo in input i valori nome, passw e la lista di utenti e cerco nell'arrayList se trovo un utente corrispondente
+    //quindi do in output true se trovo questa corrispondenza, false altrimenti
+    public Boolean login(String nomeInserito,String passwordInserita, ArrayList<Utente> listaUtenti)
+    {
+        for (int i = 0; i <listaUtenti.size(); i++)
+        {
+            if(nomeInserito.equals(listaUtenti.get(i).nome) && passwordInserita.equals(listaUtenti.get(i).password))
+            {
+                return true;        //trovato
+            }
+        }
+        return false;
+    }
+
+    //=================================== GETTER ===================================
+    public String getNome()
+    {
+        return nome;
+    }
+    public String getPassword()
+    {
+        return password;
+    }
+    public Double getSaldo()
+    {
+        return saldo;
+    }
+    public ArrayList<Movimento> getMovimenti()
+    {
+        return movimenti;
+    }
+
+    //=================================== SETTER ===================================
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setMovimenti(ArrayList<Movimento> movimenti) {
+        this.movimenti = movimenti;
+    }
 
 }
