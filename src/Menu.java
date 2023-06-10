@@ -36,7 +36,7 @@ public class Menu
             String sceltaSN = inserimento.nextLine();
 
 
-            if(sceltaSN.equals("S")|| sceltaSN.equals("s"))
+            if(sceltaSN.equalsIgnoreCase("s"))
             {
                 while(controlloDiRitorno==false)
                 {
@@ -62,7 +62,7 @@ public class Menu
                 mostraSaldo();
 
             }
-            else if (sceltaSN.equals("N") || sceltaSN.equals("n"))
+            else if (sceltaSN.equalsIgnoreCase("n"))
             {
                 //registrazione
             }
@@ -97,17 +97,17 @@ public class Menu
 
             String sceltaOpzioni = scelta.nextLine();
 
-            if (sceltaOpzioni.equals("A")|| sceltaOpzioni.equals("a"))
+            if (sceltaOpzioni.equalsIgnoreCase("a"))
             {
                 System.out.println("Inserisci entrate:");
                 //richiamo funzione inserimentoEntrate lau
             }
-            else if (sceltaOpzioni.equals("B")||sceltaOpzioni.equals("b"))
+            else if (sceltaOpzioni.equalsIgnoreCase("b"))
             {
                 System.out.println("Inscerisci le uscite:");
                 //richiamo funzione inserimentoUsciote lau
             }
-            else if (sceltaOpzioni.equals("C")||sceltaOpzioni.equals("C"))
+            else if (sceltaOpzioni.equalsIgnoreCase("c"))
             {
                 System.out.println("Log Out effettuato!");
                 controlloMenu=true;

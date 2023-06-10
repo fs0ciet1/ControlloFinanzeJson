@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu">
       <changelist_data name="virus4all" email="laurentiustoenescu94@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/src/Movimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,13 +23,13 @@
     </option>
   </component>
   <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/master" />
+    <option name="NEW_BASE" value="ControlloFinanze/master" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
         <option value="fs0ciet1 &lt;erreg97@gmail.com&gt;" />
+        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
         <option value="virus" />
       </list>
     </option>
@@ -82,7 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686397140615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="unione della classe utente con la classe menu per la funzione di login dell' utente e creazione arraylist di Utenti come attributo inizializzandolo nel costruttore">
+      <created>1686412854790</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686412854790</updated>
+    </task>
+    <task id="LOCAL-00004" summary="unione della classe utente con la classe menu per la funzione di login dell' utente e creazione arraylist di Utenti come attributo inizializzandolo nel costruttore">
+      <created>1686412939168</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686412939168</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +165,7 @@
     <MESSAGE value="creazione classe utente con funzione login e creazione  classe movimento" />
     <MESSAGE value="creazione classe utente con funzione login e creazione classe movimento" />
     <MESSAGE value="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu" />
+    <MESSAGE value="unione della classe utente con la classe menu per la funzione di login dell' utente e creazione arraylist di Utenti come attributo inizializzandolo nel costruttore" />
+    <option name="LAST_COMMIT_MESSAGE" value="unione della classe utente con la classe menu per la funzione di login dell' utente e creazione arraylist di Utenti come attributo inizializzandolo nel costruttore" />
   </component>
 </project>
