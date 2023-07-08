@@ -52,6 +52,8 @@ public class Menu
                     {
                         System.out.println("LOGIN EFFETTUATO CON SUCCESSO");
                         controlloDiRitorno=true;
+                        //richiamo la funzione saldo per farmi stampare il saldo attuale dell'utente (inserito al momento della registrazione nella classe Utente)
+                        stampaSaldo(inserisciNome);
                     }
                     else
                     {
@@ -59,8 +61,6 @@ public class Menu
 
                     }
                 }
-                //richiamo la classe saldo per farmi stampare il saldo attuale dell'utente (inserito al momento della registrazione nella classe Utente)
-                mostraSaldo();
 
             }
             else if (sceltaSN.equalsIgnoreCase("n"))
@@ -83,7 +83,9 @@ public class Menu
                     {
                         System.out.println("REGISTRAZIONE EFFETTUATA");
                         controlloDiRitorno=true;
-                        mostraSaldo();
+
+                        stampaSaldo(inserisciNome);
+
                     }
                     else
                     {
@@ -96,15 +98,15 @@ public class Menu
             {
                 System.out.println( "SCELTA NON ESISTENTE");
             }
+            break;
         }
 
-
-
-
     }
-    public void mostraSaldo()
+    public void stampaSaldo(String inserisciNome)
     {
-        System.out.println("Il tuo saldo è:" + "funzioneDiLau");
+        //lau mi restitusisce la funzione saldo ed io gli passo il nome affinchè lui mi restituisca il saldo corrispondente all'utente giusto
+        Utente ute = new Utente("","",0.0);
+        System.out.println("Il tuo saldo è:" + ute.mostraSaldo(inserisciNome, listaUtenti));
         stampaMenu();
     }
     public void stampaMenu()
@@ -137,6 +139,7 @@ public class Menu
             {
                 System.out.println("Log Out effettuato!");
                 controlloMenu=true;
+
             }
             else
             {
