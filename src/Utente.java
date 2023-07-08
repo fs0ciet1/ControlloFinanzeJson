@@ -75,6 +75,43 @@ public class Utente
         return "ERRORE, utente non trovato nella funzione mostra saldo";
     }
 
+    //=================================== FUNZIONE INSERIMENTO ENTRATE ===================================//
+    public String inserimentoEntrate(String nomeInserito, ArrayList<Utente> listaUtenti, Boolean tipoMovimento, Double quantita ,String note)
+    {
+        for (int i = 0; i < listaUtenti.size(); i++)
+        {
+            if(nomeInserito.equals(listaUtenti.get(i).nome))
+            {
+                Movimento movimentoTemp = new Movimento();
+                //entrata
+                if(tipoMovimento== true)
+                {
+                    //compongo annucio
+                    movimentoTemp.setTipoMovimento(true);
+                    movimentoTemp.setQuantita(quantita);
+                    movimentoTemp.setNote(note);
+                    movimenti.add(movimentoTemp);
+
+                    //devo aggiungere questa somma di quanita al saldo e poi restituire il saldo in stringa
+                    listaUtenti.get(i).setSaldo(listaUtenti.get(i).saldo+quantita);
+                    return listaUtenti.get(i).getSaldo().toString();
+                }
+                //ucita
+                else
+                {
+                    //compongo annucio
+                    movimentoTemp.setTipoMovimento(false);
+                    movimentoTemp.setQuantita(quantita);
+                    movimentoTemp.setNote(note);
+                    movimenti.add(movimentoTemp);
+                    //devo sottrarre questa somma di quanita al saldo e poi restituire il saldo in stringa
+                    listaUtenti.get(i).setSaldo(listaUtenti.get(i).saldo-quantita);
+                    return listaUtenti.get(i).getSaldo().toString();
+                }
+            }
+        }
+        return "ERRORE, utente non trovato in inserimentoEntrate";
+    }
     //=================================== GETTER ===================================//
     public String getNome()
     {

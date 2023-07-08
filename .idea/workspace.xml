@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="chiamata della funzione registrazione di lau">
+    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="creazione funzione di mostraSaldo, che prende una string  in input e un array e cotnrolla l'esistenza quindi restituisce se va bene un saldo converitot in stringa oppure un ERRORE.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +52,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Laurentiu/Desktop/provaBacheca&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -93,59 +92,24 @@
       <option name="project" value="LOCAL" />
       <updated>1686412939168</updated>
     </task>
-    <task id="LOCAL-00005" summary="modifica del controllo Upper and Lower Case con funzione .equalsIgnoreCase()">
-      <created>1686413417474</created>
+    <task id="LOCAL-00005" summary="creazione funzione di regritazione dell utente">
+      <created>1688836296787</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1686413417474</updated>
+      <updated>1688836296787</updated>
     </task>
-    <task id="LOCAL-00006" summary="modifica del controllo Upper and Lower Case con funzione .equalsIgnoreCase()">
-      <created>1686413481079</created>
+    <task id="LOCAL-00006" summary="creazione funzione di mostraSaldo, che prende una string  in input e un array e cotnrolla l'esistenza quindi restituisce se va bene un saldo converitot in stringa oppure un ERRORE.">
+      <created>1688839611973</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1686413481079</updated>
+      <updated>1688839611973</updated>
     </task>
-    <task id="LOCAL-00007" summary="chiamata della funzione registrazione di lau">
-      <created>1688836809660</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1688836809660</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="user">
-                    <value>
-                      <list>
-                        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -177,6 +141,34 @@
         </entry>
       </map>
     </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creazione progetto ControlloFinanzze" />
@@ -185,8 +177,8 @@
     <MESSAGE value="creazione classe utente con funzione login e creazione classe movimento" />
     <MESSAGE value="creazione della classe menu con le seguenti funzioni:&#10;-loginRegistrazione&#10;-mostraSaldo&#10;-stampaMenu" />
     <MESSAGE value="unione della classe utente con la classe menu per la funzione di login dell' utente e creazione arraylist di Utenti come attributo inizializzandolo nel costruttore" />
-    <MESSAGE value="modifica del controllo Upper and Lower Case con funzione .equalsIgnoreCase()" />
-    <MESSAGE value="chiamata della funzione registrazione di lau" />
-    <option name="LAST_COMMIT_MESSAGE" value="chiamata della funzione registrazione di lau" />
+    <MESSAGE value="creazione funzione di regritazione dell utente" />
+    <MESSAGE value="creazione funzione di mostraSaldo, che prende una string  in input e un array e cotnrolla l'esistenza quindi restituisce se va bene un saldo converitot in stringa oppure un ERRORE." />
+    <option name="LAST_COMMIT_MESSAGE" value="creazione funzione di mostraSaldo, che prende una string  in input e un array e cotnrolla l'esistenza quindi restituisce se va bene un saldo converitot in stringa oppure un ERRORE." />
   </component>
 </project>
