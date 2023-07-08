@@ -20,7 +20,7 @@ public class Utente
     private String nome;
     private String password;
     private Double saldo;
-    private ArrayList<Movimento> movimenti;             //creo ma non inizializzo il mio arraylist di movimenti
+    private static ArrayList<Movimento> movimenti;             //creo ma non inizializzo il mio arraylist di movimenti
 
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public Utente(String nome, String password , Double saldo)
@@ -76,7 +76,7 @@ public class Utente
     }
 
     //=================================== FUNZIONE INSERIMENTO ENTRATE ===================================//
-    public String inserimentoEntrate(String nomeInserito, ArrayList<Utente> listaUtenti, Boolean tipoMovimento, Double quantita ,String note)
+    public static String inserimentoEntrate(String nomeInserito, ArrayList<Utente> listaUtenti, Boolean tipoMovimento, Double quantita ,String note)
     {
         for (int i = 0; i < listaUtenti.size(); i++)
         {

@@ -107,13 +107,15 @@ public class Menu
         //lau mi restitusisce la funzione saldo ed io gli passo il nome affinchè lui mi restituisca il saldo corrispondente all'utente giusto
         Utente ute = new Utente("","",0.0);
         System.out.println("Il tuo saldo è:" + ute.mostraSaldo(inserisciNome, listaUtenti));
-        stampaMenu();
+        stampaMenu(inserisciNome);
+
+
     }
-    public void stampaMenu()
+    public void stampaMenu(String inserisciNome)
     {
         Scanner scelta = new Scanner(System.in);
         boolean controlloMenu=false;
-
+        //Utente ute = new Utente("","",0.0);
         while(controlloMenu==false)
         {
             System.out.println("-----MENU-----");
@@ -128,13 +130,24 @@ public class Menu
             if (sceltaOpzioni.equalsIgnoreCase("a"))
             {
                 System.out.println("Inserisci entrate:");
+                Scanner inserimentoEntrate = new Scanner(System.in);
+                double quantita = inserimentoEntrate.nextDouble();
+                String note = inserimentoEntrate.nextLine();
+
                 //richiamo funzione inserimentoEntrate lau
+                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, listaUtenti, true, quantita, note));
+
             }
             else if (sceltaOpzioni.equalsIgnoreCase("b"))
             {
                 System.out.println("Inscerisci le uscite:");
+                Scanner inserimentoUscite = new Scanner(System.in);
+                double quantita = inserimentoUscite.nextDouble();
+                String note = inserimentoUscite.nextLine();
                 //richiamo funzione inserimentoUsciote lau
+                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, listaUtenti, false, quantita, note));
             }
+
             else if (sceltaOpzioni.equalsIgnoreCase("c"))
             {
                 System.out.println("Log Out effettuato!");
