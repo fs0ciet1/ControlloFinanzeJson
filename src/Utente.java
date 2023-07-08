@@ -62,6 +62,18 @@ public class Utente
         listaUtenti.add(nuovoUtente);
         return true;
     }
+    //=================================== FUNZIONE MOSTRA SALDO ===================================//
+    public static String mostraSaldo(String nomeInserito, ArrayList<Utente> listaUtenti)
+    {
+        for (int i = 0; i < listaUtenti.size(); i++)
+        {
+                if (nomeInserito.equals(listaUtenti.get(i).nome))
+                {
+                    return listaUtenti.get(i).saldo.toString();
+                }
+        }
+        return "ERRORE, utente non trovato nella funzione mostra saldo";
+    }
 
     //=================================== GETTER ===================================//
     public String getNome()
