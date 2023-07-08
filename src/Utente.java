@@ -9,6 +9,7 @@ import java.util.ArrayList;
 *
 *   FUNZIONI:
 *       - login
+*       - registrazione
 *
 *
 */
@@ -33,6 +34,7 @@ public class Utente
     //=================================== FUNZIONE LOGIN ===================================//
     //prendo in input i valori nome, passw e la lista di utenti e cerco nell'arrayList se trovo un utente corrispondente
     //quindi do in output true se trovo questa corrispondenza, false altrimenti
+
     public static Boolean login(String nomeInserito,String passwordInserita, ArrayList<Utente> listaUtenti)
     {
         for (int i = 0; i <listaUtenti.size(); i++)
@@ -43,6 +45,22 @@ public class Utente
             }
         }
         return false;
+    }
+    //=================================== FUNZIONE REGISTRAZIONE ===================================//
+    //se la registrazione va a buon fine aggiorno l'arraylist, divestamente restituisco false e non va a buon fine
+    public static Boolean registrazione(String nomeInserito,String passwordInserito,Double saldoInserito,ArrayList<Utente> listaUtenti)
+    {
+        for (int i = 0; i < listaUtenti.size() ; i++)
+        {
+            if(nomeInserito.equals(listaUtenti.get(i).nome))
+            {
+                return false;
+            }
+        }
+        //quindi se non trova un untente uguale, quindi già registrato può aggiungerlo e registralo all array
+        Utente nuovoUtente = new Utente(nomeInserito, passwordInserito,saldoInserito);
+        listaUtenti.add(nuovoUtente);
+        return true;
     }
 
     //=================================== GETTER ===================================//
