@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -46,7 +47,7 @@ public class Menu
                     String inserisciNome = inserimentoCredenziali.nextLine();
                     String inserisciPsw =  inserimentoCredenziali.nextLine();
 
-                    //controllo che le funzione passate dalla classe Utente restituiscano effettivamente true per poter accedere
+                    //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè il login vada a buon fine
                     if(Utente.login(inserisciNome, inserisciPsw, listaUtenti) == true)
                     {
                         System.out.println("LOGIN EFFETTUATO CON SUCCESSO");
@@ -65,6 +66,31 @@ public class Menu
             else if (sceltaSN.equalsIgnoreCase("n"))
             {
                 //registrazione
+                while(controlloDiRitorno==false)
+                {
+                    Scanner inserimentoCredenziali = new Scanner(System.in);
+                    System.out.println("Inserisci nome:");
+                    String inserisciNome = inserimentoCredenziali.nextLine();
+
+                    System.out.println("Inserisci password:");
+                    String inserisciPsw =  inserimentoCredenziali.nextLine();
+
+                    System.out.println("Inserisci saldo:");
+                    double inserisciSaldo = inserimentoCredenziali.nextDouble();
+
+                    //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè la registrazione vada a buon fine
+                    if(Utente.registrazione(inserisciNome, inserisciPsw, inserisciSaldo, listaUtenti) == true)
+                    {
+                        System.out.println("REGISTRAZIONE EFFETTUATA");
+                        controlloDiRitorno=true;
+                        mostraSaldo();
+                    }
+                    else
+                    {
+                        System.out.println("UTENTE GIÀ ESISTENTE, REINSERISCI CREDENZIALI:");
+                    }
+
+                }
             }
             else
             {
