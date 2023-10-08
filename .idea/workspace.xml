@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="creazione funzione stampaSaldo per stampare il saldo di un utente, collegata alla funzione mostraSaldo di lau (la mia serve solo per richiamare, la sua controlla)">
+    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/googlecode_json_simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GestioneFileJson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControlloFinanze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ControlloFinanze.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Movimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,9 +58,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Laurentiu/Desktop/provaBacheca&quot;
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Laurentiu/Downloads/provaJson&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -122,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688839966715</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau">
+      <created>1688845970158</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688845970158</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +217,7 @@
     <MESSAGE value="modifica del controllo Upper and Lower Case con funzione .equalsIgnoreCase()" />
     <MESSAGE value="chiamata della funzione registrazione di lau" />
     <MESSAGE value="creazione funzione stampaSaldo per stampare il saldo di un utente, collegata alla funzione mostraSaldo di lau (la mia serve solo per richiamare, la sua controlla)" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazione funzione stampaSaldo per stampare il saldo di un utente, collegata alla funzione mostraSaldo di lau (la mia serve solo per richiamare, la sua controlla)" />
+    <MESSAGE value="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau" />
+    <option name="LAST_COMMIT_MESSAGE" value="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau" />
   </component>
 </project>

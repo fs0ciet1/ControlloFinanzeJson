@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 /*                          CLASSE UTENTE
@@ -32,14 +33,17 @@ public class Utente
     }
 
     //=================================== FUNZIONE LOGIN ===================================//
-    //prendo in input i valori nome, passw e la lista di utenti e cerco nell'arrayList se trovo un utente corrispondente
+    //prendo in input i valori nome, passw e cerco nell'arrayList se trovo un utente corrispondente
     //quindi do in output true se trovo questa corrispondenza, false altrimenti
 
-    public static Boolean login(String nomeInserito,String passwordInserita, ArrayList<Utente> listaUtenti)
+    public static Boolean login(String nomeInserito,String passwordInserita)
     {
-        for (int i = 0; i <listaUtenti.size(); i++)
+        ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
+        //valorizzo listaDaCaricare con i valori del json
+        listaDaControllare = GestioneFileJson.LeggiFile();
+        for (int i = 0; i <listaDaControllare.size(); i++)
         {
-            if(nomeInserito.equals(listaUtenti.get(i).nome) && passwordInserita.equals(listaUtenti.get(i).password))
+            if(nomeInserito.equals(listaDaControllare.get(i).nome) && passwordInserita.equals(listaDaControllare.get(i).password))
             {
                 return true;        //trovato
             }
@@ -47,40 +51,52 @@ public class Utente
         return false;
     }
     //=================================== FUNZIONE REGISTRAZIONE ===================================//
-    //se la registrazione va a buon fine aggiorno l'arraylist, divestamente restituisco false e non va a buon fine
-    public static Boolean registrazione(String nomeInserito,String passwordInserito,Double saldoInserito,ArrayList<Utente> listaUtenti)
-    {
-        for (int i = 0; i < listaUtenti.size() ; i++)
+    //se la registrazione va a buon fine aggiorno l'arraylist altrimenti restituisco false e non va a buon fine
+    public static Boolean registrazione(String nomeInserito,String passwordInserito,Double saldoInserito) throws IOException {
+        ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
+        //valorizzo listaDaCaricare con i valori del json
+        listaDaControllare = GestioneFileJson.LeggiFile();
+
+        //controllo se esiste gia un utente con lo stesso nome
+        for (int i = 0; i < listaDaControllare.size() ; i++)
         {
-            if(nomeInserito.equals(listaUtenti.get(i).nome))
+            if(nomeInserito.equals(listaDaControllare.get(i).nome))
             {
                 return false;
             }
         }
-        //quindi se non trova un untente uguale, quindi già registrato può aggiungerlo e registralo all array
+        //se non trova un untente uguale, quindi già registrato può aggiungerlo e registralo all array
         Utente nuovoUtente = new Utente(nomeInserito, passwordInserito,saldoInserito);
-        listaUtenti.add(nuovoUtente);
+        listaDaControllare.add(nuovoUtente);
+        GestioneFileJson.ScriviFile(listaDaControllare);
         return true;
     }
     //=================================== FUNZIONE MOSTRA SALDO ===================================//
-    public static String mostraSaldo(String nomeInserito, ArrayList<Utente> listaUtenti)
+    public static String mostraSaldo(String nomeInserito)
     {
-        for (int i = 0; i < listaUtenti.size(); i++)
+        ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
+        //valorizzo listaDaCaricare con i valori del json
+        listaDaControllare = GestioneFileJson.LeggiFile();
+
+        for (int i = 0; i < listaDaControllare.size(); i++)
         {
-                if (nomeInserito.equals(listaUtenti.get(i).nome))
+                if (nomeInserito.equals(listaDaControllare.get(i).nome))
                 {
-                    return listaUtenti.get(i).saldo.toString();
+                    return listaDaControllare.get(i).saldo.toString();
                 }
         }
         return "ERRORE, utente non trovato nella funzione mostra saldo";
     }
 
     //=================================== FUNZIONE INSERIMENTO ENTRATE ===================================//
-    public static String inserimentoEntrate(String nomeInserito, ArrayList<Utente> listaUtenti, Boolean tipoMovimento, Double quantita ,String note)
-    {
-        for (int i = 0; i < listaUtenti.size(); i++)
+    public static String inserimentoEntrate(String nomeInserito, Boolean tipoMovimento, Double quantita ,String note) throws IOException {
+        ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
+        //valorizzo listaDaCaricare con i valori del json
+        listaDaControllare = GestioneFileJson.LeggiFile();
+
+        for (int i = 0; i < listaDaControllare.size(); i++)
         {
-            if(nomeInserito.equals(listaUtenti.get(i).nome))
+            if(nomeInserito.equals(listaDaControllare.get(i).nome))
             {
                 Movimento movimentoTemp = new Movimento();
                 //entrata
@@ -93,8 +109,10 @@ public class Utente
                     movimenti.add(movimentoTemp);
 
                     //devo aggiungere questa somma di quanita al saldo e poi restituire il saldo in stringa
-                    listaUtenti.get(i).setSaldo(listaUtenti.get(i).saldo+quantita);
-                    return listaUtenti.get(i).getSaldo().toString();
+                    listaDaControllare.get(i).setSaldo(listaDaControllare.get(i).saldo+quantita);
+                    GestioneFileJson.ScriviFile(listaDaControllare);
+                    return listaDaControllare.get(i).getSaldo().toString();
+
                 }
                 //ucita
                 else
@@ -105,8 +123,9 @@ public class Utente
                     movimentoTemp.setNote(note);
                     movimenti.add(movimentoTemp);
                     //devo sottrarre questa somma di quanita al saldo e poi restituire il saldo in stringa
-                    listaUtenti.get(i).setSaldo(listaUtenti.get(i).saldo-quantita);
-                    return listaUtenti.get(i).getSaldo().toString();
+                    listaDaControllare.get(i).setSaldo(listaDaControllare.get(i).saldo-quantita);
+                    GestioneFileJson.ScriviFile(listaDaControllare);
+                    return listaDaControllare.get(i).getSaldo().toString();
                 }
             }
         }

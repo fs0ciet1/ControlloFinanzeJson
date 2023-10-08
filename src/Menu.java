@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,25 +9,14 @@ public class Menu
 {
     //=================================== ATTRIBUTI ===================================//
 
-    //creo ma non inizializzo il mio arraylist di utenti
-    private ArrayList<Utente> listaUtenti;
 
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
-    public  Menu()
+    public  Menu() throws IOException
     {
-        //inizializzo un arraylist di tipo Utente perchè inserirò una lista di utenti
-        this.listaUtenti = new ArrayList<Utente>();
-
-        //inizializzo un utente di prova che poi inserisco nel mio arraylist
-        Utente utenteProva = new  Utente ("pippo", "123", 500.00);
-
-        //aggiungio un utente di prova dentro il mio arraylist
-        listaUtenti.add(utenteProva);
         loginRegistrazioni();
     }
     //creazione del menu
-    public void loginRegistrazioni()
-    {
+    public void loginRegistrazioni() throws IOException {
 
         boolean controlloDiRitorno = false;
         while(true)
@@ -36,7 +26,7 @@ public class Menu
             Scanner inserimento = new Scanner(System.in);
             String sceltaSN = inserimento.nextLine();
 
-
+            //login
             if(sceltaSN.equalsIgnoreCase("s"))
             {
                 while(controlloDiRitorno==false)
@@ -48,7 +38,7 @@ public class Menu
                     String inserisciPsw =  inserimentoCredenziali.nextLine();
 
                     //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè il login vada a buon fine
-                    if(Utente.login(inserisciNome, inserisciPsw, listaUtenti) == true)
+                    if(Utente.login(inserisciNome, inserisciPsw) == true)
                     {
                         System.out.println("LOGIN EFFETTUATO CON SUCCESSO");
                         controlloDiRitorno=true;
@@ -63,9 +53,11 @@ public class Menu
                 }
 
             }
+
+            //registrazione
             else if (sceltaSN.equalsIgnoreCase("n"))
             {
-                //registrazione
+
                 while(controlloDiRitorno==false)
                 {
                     Scanner inserimentoCredenziali = new Scanner(System.in);
@@ -79,7 +71,7 @@ public class Menu
                     double inserisciSaldo = inserimentoCredenziali.nextDouble();
 
                     //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè la registrazione vada a buon fine
-                    if(Utente.registrazione(inserisciNome, inserisciPsw, inserisciSaldo, listaUtenti) == true)
+                    if(Utente.registrazione(inserisciNome, inserisciPsw, inserisciSaldo) == true)
                     {
                         System.out.println("REGISTRAZIONE EFFETTUATA");
                         controlloDiRitorno=true;
@@ -98,21 +90,19 @@ public class Menu
             {
                 System.out.println( "SCELTA NON ESISTENTE");
             }
-            break;
+            controlloDiRitorno=false;
         }
 
     }
-    public void stampaSaldo(String inserisciNome)
-    {
+    public void stampaSaldo(String inserisciNome) throws IOException {
         //lau mi restitusisce la funzione saldo ed io gli passo il nome affinchè lui mi restituisca il saldo corrispondente all'utente giusto
         Utente ute = new Utente("","",0.0);
-        System.out.println("Il tuo saldo è:" + ute.mostraSaldo(inserisciNome, listaUtenti));
+        System.out.println("Il tuo saldo è:" + ute.mostraSaldo(inserisciNome));
         stampaMenu(inserisciNome);
 
 
     }
-    public void stampaMenu(String inserisciNome)
-    {
+    public void stampaMenu(String inserisciNome) throws IOException {
         Scanner scelta = new Scanner(System.in);
         boolean controlloMenu=false;
         //Utente ute = new Utente("","",0.0);
@@ -135,7 +125,7 @@ public class Menu
                 String note = inserimentoEntrate.nextLine();
 
                 //richiamo funzione inserimentoEntrate lau
-                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, listaUtenti, true, quantita, note));
+                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, true, quantita, note));
 
             }
             else if (sceltaOpzioni.equalsIgnoreCase("b"))
@@ -145,7 +135,7 @@ public class Menu
                 double quantita = inserimentoUscite.nextDouble();
                 String note = inserimentoUscite.nextLine();
                 //richiamo funzione inserimentoUsciote lau
-                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, listaUtenti, false, quantita, note));
+                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, false, quantita, note));
             }
 
             else if (sceltaOpzioni.equalsIgnoreCase("c"))

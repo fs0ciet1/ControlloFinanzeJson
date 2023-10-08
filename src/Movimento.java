@@ -14,6 +14,7 @@ public class Movimento
     private Boolean tipoMovimento;      //true = entrata , false = uscita
     private Double quantita;
     private String note;
+    //IMPORTANTE: ID UNIVOCO UTENTE
 
     //=================================== GETTER ===================================
     public Boolean getTipoMovimento()
