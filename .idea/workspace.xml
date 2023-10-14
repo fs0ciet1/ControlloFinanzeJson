@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Movimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movimento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,10 +134,52 @@
       <option name="project" value="LOCAL" />
       <updated>1688845970158</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice">
+      <created>1697293712942</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697293712942</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1697293939893</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697293939893</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -173,34 +211,6 @@
         </entry>
       </map>
     </option>
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="user">
-                    <value>
-                      <list>
-                        <option value="virus4all &lt;laurentiustoenescu94@gmail.com&gt;" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creazione progetto ControlloFinanzze" />
@@ -213,6 +223,8 @@
     <MESSAGE value="chiamata della funzione registrazione di lau" />
     <MESSAGE value="creazione funzione stampaSaldo per stampare il saldo di un utente, collegata alla funzione mostraSaldo di lau (la mia serve solo per richiamare, la sua controlla)" />
     <MESSAGE value="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau" />
-    <option name="LAST_COMMIT_MESSAGE" value="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau" />
+    <MESSAGE value="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>
