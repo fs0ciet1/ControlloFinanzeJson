@@ -21,7 +21,7 @@ public class Utente
     private String nome;
     private String password;
     private Double saldo;
-    private static ArrayList<Movimento> movimenti;             //non mi servira qui ma nelle varie funzioni
+
 
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public Utente(String nome, String password , Double saldo)
@@ -29,7 +29,7 @@ public class Utente
         this.nome=nome;
         this.password=password;
         this.saldo=saldo;
-        this.movimenti = new ArrayList<Movimento>();    //si potra eliminare
+
     }
 
     //=================================== FUNZIONE LOGIN ===================================//
@@ -88,49 +88,7 @@ public class Utente
         return "ERRORE, utente non trovato nella funzione mostra saldo";
     }
 
-    //=================================== FUNZIONE INSERIMENTO ENTRATE ===================================//
-    public static String inserimentoEntrate(String nomeInserito, Boolean tipoMovimento, Double quantita ,String note) throws IOException {
-        ArrayList<Utente> listaDaControllareUtenti = new ArrayList<Utente>();
-        //valorizzo listaDaCaricare con i valori del json
-        listaDaControllareUtenti = GestioneFileJson.LeggiFileUtenti();
 
-        for (int i = 0; i < listaDaControllareUtenti.size(); i++)
-        {
-            if(nomeInserito.equals(listaDaControllareUtenti.get(i).nome))
-            {
-                Movimento movimentoTemp = new Movimento();
-                //entrata
-                if(tipoMovimento== true)
-                {
-                    //aggiungo movimenti
-                    movimentoTemp.setTipoMovimento(true);
-                    movimentoTemp.setQuantita(quantita);
-                    movimentoTemp.setNote(note);
-                    movimenti.add(movimentoTemp); // probabilmente mi servira un nuovo oggetto interno nella fun
-
-                    //devo aggiungere questa somma di quanita al saldo e poi restituire il saldo in stringa
-                    listaDaControllareUtenti.get(i).setSaldo(listaDaControllareUtenti.get(i).saldo+quantita);
-                    GestioneFileJson.ScriviFileUtenti(listaDaControllareUtenti);
-                    return listaDaControllareUtenti.get(i).getSaldo().toString();
-
-                }
-                //ucita
-                else
-                {
-                    //compongo annucio
-                    movimentoTemp.setTipoMovimento(false);
-                    movimentoTemp.setQuantita(quantita);
-                    movimentoTemp.setNote(note);
-                    movimenti.add(movimentoTemp);
-                    //devo sottrarre questa somma di quanita al saldo e poi restituire il saldo in stringa
-                    listaDaControllareUtenti.get(i).setSaldo(listaDaControllareUtenti.get(i).saldo-quantita);
-                    GestioneFileJson.ScriviFileUtenti(listaDaControllareUtenti);
-                    return listaDaControllareUtenti.get(i).getSaldo().toString();
-                }
-            }
-        }
-        return "ERRORE, utente non trovato in inserimentoEntrate";
-    }
     //=================================== GETTER ===================================//
     public String getNome()
     {
@@ -143,10 +101,6 @@ public class Utente
     public Double getSaldo()
     {
         return saldo;
-    }
-    public ArrayList<Movimento> getMovimenti()
-    {
-        return movimenti;
     }
 
     //=================================== SETTER ===================================//
@@ -162,8 +116,6 @@ public class Utente
         this.saldo = saldo;
     }
 
-    public void setMovimenti(ArrayList<Movimento> movimenti) {
-        this.movimenti = movimenti;
-    }
+
 
 }

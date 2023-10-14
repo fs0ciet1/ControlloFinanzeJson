@@ -16,23 +16,23 @@ import java.util.ArrayList;
 public class Movimento
 {
     //=================================== ATTRIBUTI ===================================
-    //private String idUtente;           //serve a identificare a chi appartrtiene un determinato movimento
+    private String nomeUtente;           //serve a identificare a chi appartrtiene un determinato movimento
     private boolean tipoMovimento;      //TRUE = entrata , FALSE = uscita
     private double quantita;
     private String note;                // NOTE: forse non utile e andra traformato in categoria
 
     //=================================== COSTRUTTORE ===================================
-    //un movimento per il momento puo esistere vuoto per comodità di comoposizione dell annuncio in fase di entrata o uscita
+    //un movimento per il momento puo esistere vuoto per comodità di comoposizione dell movimento in fase di entrata o uscita
     public Movimento()
     {
 
     }
 
     //=================================== aggiungiMovimento ===================================
-    //ho necessità che la funzione Menu mi passi i parametri da input, poi qui richiamo il metodo scriviFileMovimenti e restituisco true o false se tutto va bene
-    //quindi la funzione dentro utente di inserimento movimento non serve più e richiamo direttamente dal menu questa funz
-    //ho necessità però di sapere id utente per poter poi gestire il suo saldo
-    public static boolean AggiungiMovimento(Integer idUtente,Boolean tipoMovimento, Double quantita,String note)
+
+    // la funzione dentro utente di inserimento movimento non serve più e richiamo direttamente dal menu questa funz
+
+    public static void AggiungiMovimento(String nomeUtente,boolean tipoMovimento, double quantita,String note)
     {
         //Variabili che necessitp di usare come appoggio
         ArrayList<Movimento> listaMovimentiTemp = new ArrayList<Movimento>();
@@ -50,6 +50,7 @@ public class Movimento
         movimentoTemp.setTipoMovimento(tipoMovimento);
         movimentoTemp.setQuantita(quantita);
         movimentoTemp.setNote(note);
+        listaMovimentiTemp.add(movimentoTemp);
 
         //cerco la corrispondenza dell id utente dentro la listaUtentiTemp
         for (int i = 0; i < listaUtentiTemp.size(); i++)
@@ -75,19 +76,16 @@ public class Movimento
                 }
             }*/
         }
-
-        //quindi aggiorno la lista Movimenti e Utenti(per via del saldo)
-        //sul return potrei fare tipo così visto che se vanno a buon fine il caricamento dei file mi restiturisce dei true
-        //if(GestioneFileJson.ScriviFileMovimenti() && GestioneFileJson.ScriviFileUtenti()) return true
-        //else return false
-        return true;
     }
 
     //=================================== mostraMovimenti ===================================
     //sarà da implementare, o meglio richiamare nel menù questa funzione che restituisce semplicemente un array di movimentei del utente specifico
     //quindi ho bisogno dell id del utente in chiamata e returno un array list di mov di quel utente
     //quindi tolgo il parametro arraylist di movimenti da dentro Utente
-    public static ArrayList<Movimento> MostraMovimentiUtente(Integer idUtente)
+
+    //IMPORTANTE >> capire se si puo modificare la funzione LeggiFileMovimenti prelevando dal JSON solo i movimenti di uno specifico utente
+
+    public static ArrayList<Movimento> MostraMovimentiUtente(String nome)
     {
         ArrayList<Movimento> listaMovimentiTemp = new ArrayList<Movimento>();
         // quindi ho bisogno solo della lista dei movimenti, in teoria ne basta una
@@ -99,7 +97,7 @@ public class Movimento
         for (int i = 0; i < listaMovimentiTemp.size(); i++)
         {
             /*
-            if (listaMovimentiTemp.get(i).getIdUtente()!=idUtente)
+            if (listaMovimentiTemp.get(i).getNome()!=nome)
             {
                 listaMovimentiTemp.remove(i);
             }*/
@@ -111,10 +109,10 @@ public class Movimento
     }
 
     //=================================== GETTER ===================================
-    public Boolean getTipoMovimento() {
+    public boolean getTipoMovimento() {
         return tipoMovimento;
     }
-    public Double getQuantita() {
+    public double getQuantita() {
         return quantita;
     }
     public String getNote() {
@@ -122,10 +120,10 @@ public class Movimento
     }
 
     //=================================== SETTER ===================================
-    public void setTipoMovimento(Boolean tipoMovimento) {
+    public void setTipoMovimento(boolean tipoMovimento) {
         this.tipoMovimento = tipoMovimento;
     }
-    public void setQuantita(Double quantita) {
+    public void setQuantita(double quantita) {
         this.quantita = quantita;
     }
     public void setNote(String note) {

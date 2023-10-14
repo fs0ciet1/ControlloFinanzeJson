@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Movimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movimento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697293939893</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice">
+      <created>1697293997861</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697293997861</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,8 +235,8 @@
     <MESSAGE value="chiamata della funzione registrazione di lau" />
     <MESSAGE value="creazione funzione stampaSaldo per stampare il saldo di un utente, collegata alla funzione mostraSaldo di lau (la mia serve solo per richiamare, la sua controlla)" />
     <MESSAGE value="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau" />
-    <MESSAGE value="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice" />
+    <option name="LAST_COMMIT_MESSAGE" value="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice" />
   </component>
 </project>

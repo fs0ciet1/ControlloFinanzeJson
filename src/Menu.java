@@ -125,7 +125,7 @@ public class Menu
                 String note = inserimentoEntrate.nextLine();
 
                 //richiamo funzione inserimentoEntrate lau
-                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, true, quantita, note));
+                //System.out.println("Adesso il saldo attuale è:" + Movimento.AggiungiMovimento(inserisciNome, true, quantita, note));
 
             }
             else if (sceltaOpzioni.equalsIgnoreCase("b"))
@@ -135,7 +135,7 @@ public class Menu
                 double quantita = inserimentoUscite.nextDouble();
                 String note = inserimentoUscite.nextLine();
                 //richiamo funzione inserimentoUsciote lau
-                System.out.println("Adesso il saldo attuale è:" + Utente.inserimentoEntrate(inserisciNome, false, quantita, note));
+                //System.out.println("Adesso il saldo attuale è:" + Movimento.AggiungiMovimento(inserisciNome, false, quantita, note));
             }
 
             else if (sceltaOpzioni.equalsIgnoreCase("c"))
