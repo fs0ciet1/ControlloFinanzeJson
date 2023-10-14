@@ -6,7 +6,7 @@ import java.util.ArrayList;
 *       - nome
 *       - passoword
 *       - saldo
-*       - movimenti
+*
 *
 *   FUNZIONI:
 *       - login
@@ -21,7 +21,7 @@ public class Utente
     private String nome;
     private String password;
     private Double saldo;
-    private static ArrayList<Movimento> movimenti;             //creo ma non inizializzo il mio arraylist di movimenti
+    private static ArrayList<Movimento> movimenti;             //non mi servira qui ma nelle varie funzioni
 
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public Utente(String nome, String password , Double saldo)
@@ -29,7 +29,7 @@ public class Utente
         this.nome=nome;
         this.password=password;
         this.saldo=saldo;
-        this.movimenti = new ArrayList<Movimento>();    //inizializzo un arraylist di movimenti vuoto
+        this.movimenti = new ArrayList<Movimento>();    //si potra eliminare
     }
 
     //=================================== FUNZIONE LOGIN ===================================//
@@ -40,7 +40,7 @@ public class Utente
     {
         ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
         //valorizzo listaDaCaricare con i valori del json
-        listaDaControllare = GestioneFileJson.LeggiFile();
+        listaDaControllare = GestioneFileJson.LeggiFileUtenti();
         for (int i = 0; i <listaDaControllare.size(); i++)
         {
             if(nomeInserito.equals(listaDaControllare.get(i).nome) && passwordInserita.equals(listaDaControllare.get(i).password))
@@ -55,7 +55,7 @@ public class Utente
     public static Boolean registrazione(String nomeInserito,String passwordInserito,Double saldoInserito) throws IOException {
         ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
         //valorizzo listaDaCaricare con i valori del json
-        listaDaControllare = GestioneFileJson.LeggiFile();
+        listaDaControllare = GestioneFileJson.LeggiFileUtenti();
 
         //controllo se esiste gia un utente con lo stesso nome
         for (int i = 0; i < listaDaControllare.size() ; i++)
@@ -68,15 +68,15 @@ public class Utente
         //se non trova un untente uguale, quindi già registrato può aggiungerlo e registralo all array
         Utente nuovoUtente = new Utente(nomeInserito, passwordInserito,saldoInserito);
         listaDaControllare.add(nuovoUtente);
-        GestioneFileJson.ScriviFile(listaDaControllare);
+        GestioneFileJson.ScriviFileUtenti(listaDaControllare);
         return true;
     }
     //=================================== FUNZIONE MOSTRA SALDO ===================================//
     public static String mostraSaldo(String nomeInserito)
     {
         ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
-        //valorizzo listaDaCaricare con i valori del json
-        listaDaControllare = GestioneFileJson.LeggiFile();
+        //valorizzo listaDaControllare con i valori del json
+        listaDaControllare = GestioneFileJson.LeggiFileUtenti();
 
         for (int i = 0; i < listaDaControllare.size(); i++)
         {
@@ -90,28 +90,28 @@ public class Utente
 
     //=================================== FUNZIONE INSERIMENTO ENTRATE ===================================//
     public static String inserimentoEntrate(String nomeInserito, Boolean tipoMovimento, Double quantita ,String note) throws IOException {
-        ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
+        ArrayList<Utente> listaDaControllareUtenti = new ArrayList<Utente>();
         //valorizzo listaDaCaricare con i valori del json
-        listaDaControllare = GestioneFileJson.LeggiFile();
+        listaDaControllareUtenti = GestioneFileJson.LeggiFileUtenti();
 
-        for (int i = 0; i < listaDaControllare.size(); i++)
+        for (int i = 0; i < listaDaControllareUtenti.size(); i++)
         {
-            if(nomeInserito.equals(listaDaControllare.get(i).nome))
+            if(nomeInserito.equals(listaDaControllareUtenti.get(i).nome))
             {
                 Movimento movimentoTemp = new Movimento();
                 //entrata
                 if(tipoMovimento== true)
                 {
-                    //compongo annucio
+                    //aggiungo movimenti
                     movimentoTemp.setTipoMovimento(true);
                     movimentoTemp.setQuantita(quantita);
                     movimentoTemp.setNote(note);
-                    movimenti.add(movimentoTemp);
+                    movimenti.add(movimentoTemp); // probabilmente mi servira un nuovo oggetto interno nella fun
 
                     //devo aggiungere questa somma di quanita al saldo e poi restituire il saldo in stringa
-                    listaDaControllare.get(i).setSaldo(listaDaControllare.get(i).saldo+quantita);
-                    GestioneFileJson.ScriviFile(listaDaControllare);
-                    return listaDaControllare.get(i).getSaldo().toString();
+                    listaDaControllareUtenti.get(i).setSaldo(listaDaControllareUtenti.get(i).saldo+quantita);
+                    GestioneFileJson.ScriviFileUtenti(listaDaControllareUtenti);
+                    return listaDaControllareUtenti.get(i).getSaldo().toString();
 
                 }
                 //ucita
@@ -123,9 +123,9 @@ public class Utente
                     movimentoTemp.setNote(note);
                     movimenti.add(movimentoTemp);
                     //devo sottrarre questa somma di quanita al saldo e poi restituire il saldo in stringa
-                    listaDaControllare.get(i).setSaldo(listaDaControllare.get(i).saldo-quantita);
-                    GestioneFileJson.ScriviFile(listaDaControllare);
-                    return listaDaControllare.get(i).getSaldo().toString();
+                    listaDaControllareUtenti.get(i).setSaldo(listaDaControllareUtenti.get(i).saldo-quantita);
+                    GestioneFileJson.ScriviFileUtenti(listaDaControllareUtenti);
+                    return listaDaControllareUtenti.get(i).getSaldo().toString();
                 }
             }
         }

@@ -1,6 +1,4 @@
 import java.io.IOException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -13,6 +11,8 @@ public class Menu
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public  Menu() throws IOException
     {
+        GestioneFileJson.CreazioneFilePiuCartellaUtenti();
+        GestioneFileJson.CreaFilePiuCartellaMovimenti();
         loginRegistrazioni();
     }
     //creazione del menu

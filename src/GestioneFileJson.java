@@ -6,43 +6,78 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
+/*                          CLASSE GESTIONE FILE JSON
+ *   ATTRIBUTI:
+ *       - path fileJson di utenti
+ *
+ *
+ *   FUNZIONI:
+ *       - creazione file
+ *       - lettura file
+ *       - scrittura file
+ *
+ *
+ */
 public class GestioneFileJson
 {
     //=================================== ATTRIBUTI ===================================//
     //creazione attributo String filepath generico + nome file
-    private static final String filePahtName = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "test.json";
-
+    private static final String cartellaPiuFileUtenti = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "DATI"+ File.separator + "listaUtenti.json" ;
+    private static final String cartellaPiuFileMovimenti = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "DATI"+ File.separator + "listaMovimenti.json";
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public GestioneFileJson() {
     }
 
 
-    //=================================== FUNZIONE CREAZIONE FILE ===================================//
-    // qui si richiama il controlloEsistenzaFile e poi si crea
-    public static boolean CreaFile() throws IOException
-    {
-        File myObj = new File(filePahtName);
 
-        if (myObj.exists())
+    //=================================== FUNZIONE CREAZIONE FILE UTENTI===================================//
+    // qui si richiama il controlloEsistenzaFile e poi si crea
+    public static boolean CreazioneFilePiuCartellaUtenti() throws IOException
+    {
+        File utenti = new File(cartellaPiuFileUtenti);
+
+
+        if (utenti.exists())
         {
-            System.out.println("File exists: " + myObj.getName());
+            System.out.println("File exists: " + utenti.getName());
             return true;
         }
         else
         {
-            System.out.println("File not exists, CREATED");
-            myObj.createNewFile();
+            //System.out.println("File not exists, CREATED");
+            utenti.getParentFile().mkdirs();
+            utenti.createNewFile();
             return false;
 
         }
     }
 
-    //=================================== FUNZIONE LETTURA FILE ===================================//
-    //Creazione fun LeggiFile return di array
-    public static ArrayList<Utente> LeggiFile()
+    //=================================== FUNZIONE CREAZIONE FILE MOVIMENTI===================================//
+    //creazione fun CreazioneFileMovimenti
+    public static boolean CreaFilePiuCartellaMovimenti() throws IOException {
+        File movimenti = new File(cartellaPiuFileMovimenti);
+        if (movimenti.exists())
+        {
+            System.out.println("File exists: " + movimenti.getName());
+            return true;
+        }
+        else
+        {
+            System.out.println("File not exists, CREATED");
+            movimenti.getParentFile().mkdirs();
+            movimenti.createNewFile();
+
+            return false;
+
+        }
+    }
+
+
+    //=================================== FUNZIONE LETTURA FILE UTENTI===================================//
+    //Creazione fun LeggiFileUtenti return di array
+    public static ArrayList<Utente> LeggiFileUtenti()
     {
-        File theFile = new File(filePahtName);
+        File theFile = new File(cartellaPiuFileUtenti);
         ArrayList<Utente> caricamentoListaUtenti = new ArrayList<Utente>();
 
         /*
@@ -74,28 +109,55 @@ public class GestioneFileJson
          return caricamentoListaUtenti;
     }
 
-    //=================================== FUNZIONE SCRITTURA FILE ===================================//
+    //=================================== FUNZIONE LETTURA FILE MOVIMENTI ===================================//
+    //Creazione fun LeggiFileMovimenti return di array
+    public static ArrayList<Movimento> LeggiFileMovimenti()
+    {
+        File theFile = new File(cartellaPiuFileMovimenti);
+        ArrayList<Movimento> caricamentoListaMovimenti = new ArrayList<Movimento>();
+
+        /*
+         *necessaria per prendere i dati dal file json tramite getType
+         *e caricare i file da json a arraylist con .fromJson
+         *tutto questo per poter comunicare tra java e file Json
+         */
+        try
+        {
+            FileReader fileReader = new FileReader(theFile);
+            Type type = new TypeToken<ArrayList<Utente>>(){}.getType();
+            Gson gson2 = new Gson();
+            caricamentoListaMovimenti =gson2.fromJson(fileReader, type);
+            fileReader.close();
+        }  catch (FileNotFoundException e )
+        {
+            System.err.println("Error in creating fileReadr obj");
+        }
+        catch (IOException e) {
+            System.err.println("Error in closing file");
+        }
+
+        // Verifica se l'ArrayList è null.
+        if(caricamentoListaMovimenti == null)
+        {
+            // L'ArrayList è null, lo inizializza nuovamente
+            caricamentoListaMovimenti = new ArrayList<>();
+        }
+        return caricamentoListaMovimenti;
+    }
+
+    //=================================== FUNZIONE SCRITTURA FILE UTENTi ===================================//
     //if file exist then writefile
-    public static boolean ScriviFile(ArrayList<Utente> listaDaControllare ) throws IOException
+    public static boolean ScriviFileUtenti(ArrayList<Utente> listaDaControllareU ) throws IOException
     {
         //nel caso il file non esistestesse per qualsiasi ragione, esso viene ricreato prima di popolarlo
-        CreaFile();
-
-        //dichiaro e inizializzo un oggetto temporaneo a cui passo dei valori che poi aggiungero all arraylist
-        //Utente uteTemp = new Utente(nome, password, saldo);
-        //creo un arralyst  temp che verra popolato dal file json mediante LeggiFile
-        //ArrayList<Utente> listaDaCaricare = new ArrayList<Utente>();
-        //valorizzo listaDaCaricare con i valori del json
-        //listaDaCaricare = LeggiFile();
-        //aggiungo utenteTemp all arraylist
-        //listaDaCaricare.add();
+        CreazioneFilePiuCartellaUtenti();
 
         Gson gson = new Gson();
-        FileWriter file = new FileWriter(filePahtName);
+        FileWriter file = new FileWriter(cartellaPiuFileUtenti);
         try
         {
             //sostituisce i valori del file json che ha subito modifiche tramite un arraylist
-            file.write(gson.toJson(listaDaControllare));
+            file.write(gson.toJson(listaDaControllareU));
             return true;
         } catch (IOException e) {
             return false;
@@ -104,13 +166,25 @@ public class GestioneFileJson
         }
     }
 
-    //=================================== FUNZIONE MODIFICA FILE ===================================//
-    //creazione fun ModificaFile
-    /*private void ModificaFile()
+    //=================================== FUNZIONE SCRITTURA FILE MOVIMENTI ===================================//
+    //public static boolean ScriviFileMovimenti(){}
+    public static boolean ScriviFileMovimenti(ArrayList<Movimento> listaDaControllareM ) throws IOException
     {
-        LeggiFile();
+        //nel caso il file non esistestesse per qualsiasi ragione, esso viene ricreato prima di popolarlo
+        CreaFilePiuCartellaMovimenti();
 
-    }*/
-
+        Gson gson = new Gson();
+        FileWriter file = new FileWriter(cartellaPiuFileMovimenti);
+        try
+        {
+            //sostituisce i valori del file json che ha subito modifiche tramite un arraylist
+            file.write(gson.toJson(listaDaControllareM));
+            return true;
+        } catch (IOException e) {
+            return false;
+        }finally {
+            file.close();
+        }
+    }
 
 }
