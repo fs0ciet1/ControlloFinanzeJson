@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice">
+    <list default="true" id="eeef6f22-1d11-45f2-b00d-9be0cbd50e56" name="Changes" comment="***MEGA AGGIORNAMENTO***&#10;creazione classe GestioneFileJson per salvare i dati su un file e non su codice">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023_14_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2023_14_36__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GestioneFileJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestioneFileJson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Movimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utente.java" afterDir="false" />
@@ -60,8 +62,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Laurentiu/Downloads/provaJson&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programmazione/Java/ControlloFinanze&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -139,28 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688845970158</updated>
     </task>
-    <task id="LOCAL-00010" summary="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice">
-      <created>1697293712942</created>
+    <task id="LOCAL-00010" summary="***MEGA AGGIORNAMENTO***&#10;creazione classe GestioneFileJson per salvare i dati su un file e non su codice">
+      <created>1696768340549</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1697293712942</updated>
+      <updated>1696768340549</updated>
     </task>
-    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1697293939893</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1697293939893</updated>
-    </task>
-    <task id="LOCAL-00012" summary="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice">
-      <created>1697293997861</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1697293997861</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,8 +222,17 @@
     <MESSAGE value="chiamata della funzione registrazione di lau" />
     <MESSAGE value="creazione funzione stampaSaldo per stampare il saldo di un utente, collegata alla funzione mostraSaldo di lau (la mia serve solo per richiamare, la sua controlla)" />
     <MESSAGE value="ho reso l'arraylist di movimenti static in modo tale da non crerare una copia della classe ma accedere alla classe stesa ed ho richiamato la funzione inserisciEntrate ed inserisciUscite di lau" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazione di fun per creazione cartella+file movimenti e cartella+file utenti con relativi cambiamentii per il funzionamento del codice" />
+    <MESSAGE value="***MEGA AGGIORNAMENTO***&#10;creazione classe GestioneFileJson per salvare i dati su un file e non su codice" />
+    <option name="LAST_COMMIT_MESSAGE" value="***MEGA AGGIORNAMENTO***&#10;creazione classe GestioneFileJson per salvare i dati su un file e non su codice" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

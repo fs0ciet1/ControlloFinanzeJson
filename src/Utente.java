@@ -56,6 +56,7 @@ public class Utente
         ArrayList<Utente> listaDaControllare = new ArrayList<Utente>();
         //valorizzo listaDaCaricare con i valori del json
         listaDaControllare = GestioneFileJson.LeggiFileUtenti();
+        Utente nuovoUtente = new Utente(nomeInserito, passwordInserito,saldoInserito);
 
         //controllo se esiste gia un utente con lo stesso nome
         for (int i = 0; i < listaDaControllare.size() ; i++)
@@ -66,7 +67,7 @@ public class Utente
             }
         }
         //se non trova un untente uguale, quindi già registrato può aggiungerlo e registralo all array
-        Utente nuovoUtente = new Utente(nomeInserito, passwordInserito,saldoInserito);
+
         listaDaControllare.add(nuovoUtente);
         GestioneFileJson.ScriviFileUtenti(listaDaControllare);
         return true;
@@ -88,6 +89,13 @@ public class Utente
         return "ERRORE, utente non trovato nella funzione mostra saldo";
     }
 
+    public void aggiungiSaldo(double quantita) {
+        saldo += quantita;
+    }
+
+    public void sottraiSaldo(double quantita) {
+        saldo -= quantita;
+    }
 
     //=================================== GETTER ===================================//
     public String getNome()

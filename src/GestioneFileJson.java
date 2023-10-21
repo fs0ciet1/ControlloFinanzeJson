@@ -118,13 +118,13 @@ public class GestioneFileJson
 
         /*
          *necessaria per prendere i dati dal file json tramite getType
-         *e caricare i file da json a arraylist con .fromJson
+         *e caricare i file da json ad arraylist con .fromJson
          *tutto questo per poter comunicare tra java e file Json
          */
         try
         {
             FileReader fileReader = new FileReader(theFile);
-            Type type = new TypeToken<ArrayList<Utente>>(){}.getType();
+            Type type = new TypeToken<ArrayList<Movimento>>(){}.getType();
             Gson gson2 = new Gson();
             caricamentoListaMovimenti =gson2.fromJson(fileReader, type);
             fileReader.close();

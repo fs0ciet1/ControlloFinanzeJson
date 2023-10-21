@@ -119,22 +119,33 @@ public class Menu
 
             if (sceltaOpzioni.equalsIgnoreCase("a"))
             {
-                System.out.println("Inserisci entrate:");
                 Scanner inserimentoEntrate = new Scanner(System.in);
+                Scanner inserimentoNoteEntrate = new Scanner(System.in);
+
+                System.out.println("Inserisci entrate:");
                 double quantita = inserimentoEntrate.nextDouble();
-                String note = inserimentoEntrate.nextLine();
+
+                System.out.println("Inserisci note:");
+                String note = inserimentoNoteEntrate.nextLine();
 
                 //richiamo funzione inserimentoEntrate lau
+                Movimento.AggiungiMovimento(inserisciNome, true, quantita, note);
                 //System.out.println("Adesso il saldo attuale è:" + Movimento.AggiungiMovimento(inserisciNome, true, quantita, note));
 
             }
             else if (sceltaOpzioni.equalsIgnoreCase("b"))
             {
-                System.out.println("Inscerisci le uscite:");
                 Scanner inserimentoUscite = new Scanner(System.in);
+                Scanner inserimentoNoteUscite = new Scanner(System.in);
+
+                System.out.println("Inserisci uscite:");
                 double quantita = inserimentoUscite.nextDouble();
-                String note = inserimentoUscite.nextLine();
-                //richiamo funzione inserimentoUsciote lau
+
+                System.out.println("Inserisci note:");
+                String note = inserimentoNoteUscite.nextLine();
+
+                //richiamo funzione inserimentoEntrate lau
+                Movimento.AggiungiMovimento(inserisciNome, false, quantita, note);
                 //System.out.println("Adesso il saldo attuale è:" + Movimento.AggiungiMovimento(inserisciNome, false, quantita, note));
             }
 
