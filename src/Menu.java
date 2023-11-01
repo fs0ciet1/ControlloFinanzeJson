@@ -11,25 +11,27 @@ public class Menu
     //=================================== COSTRUTTORE DI DEFAULT ===================================//
     public  Menu() throws IOException
     {
-        GestioneFileJson.CreazioneFilePiuCartellaUtenti();
-        GestioneFileJson.CreaFilePiuCartellaMovimenti();
-        loginRegistrazioni();
+        //prima di far partire il menu creo cartella + file sia di utenti che movimenti
+        JsonFileManupulation.FolderAndFileUsersCreation();
+        JsonFileManupulation.FolderAndFileOperationsCreation();
+        LoginAndRegistration();
     }
     //creazione del menu
-    public void loginRegistrazioni() throws IOException {
-
-        boolean controlloDiRitorno = false;
+    public void LoginAndRegistration() throws IOException
+    {
+        boolean progressControl = false;
         while(true)
         {
-            System.out.println("Sei già registrato [S/N]");
+            System.out.println("Sei già registrato [Y/N]");
 
             Scanner inserimento = new Scanner(System.in);
-            String sceltaSN = inserimento.nextLine();
+            String YNChoice = inserimento.nextLine();
 
             //login
-            if(sceltaSN.equalsIgnoreCase("s"))
+            if(YNChoice.equalsIgnoreCase("y"))
             {
-                while(controlloDiRitorno==false)
+                //prende i dati utente e cicla finche non sono corretti
+                while(progressControl==false)
                 {
                     System.out.println("Inserisci nome e password");
 
@@ -38,12 +40,13 @@ public class Menu
                     String inserisciPsw =  inserimentoCredenziali.nextLine();
 
                     //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè il login vada a buon fine
-                    if(Utente.login(inserisciNome, inserisciPsw) == true)
+                    if(User.LoginJson(inserisciNome, inserisciPsw) == true)
                     {
                         System.out.println("LOGIN EFFETTUATO CON SUCCESSO");
-                        controlloDiRitorno=true;
+                        progressControl=true;
+
                         //richiamo la funzione saldo per farmi stampare il saldo attuale dell'utente (inserito al momento della registrazione nella classe Utente)
-                        stampaSaldo(inserisciNome);
+                        PrintBalance(inserisciNome);
                     }
                     else
                     {
@@ -55,28 +58,27 @@ public class Menu
             }
 
             //registrazione
-            else if (sceltaSN.equalsIgnoreCase("n"))
+            else if (YNChoice.equalsIgnoreCase("n"))
             {
-
-                while(controlloDiRitorno==false)
+                while(progressControl==false)
                 {
-                    Scanner inserimentoCredenziali = new Scanner(System.in);
+                    Scanner inputCredentials = new Scanner(System.in);
                     System.out.println("Inserisci nome:");
-                    String inserisciNome = inserimentoCredenziali.nextLine();
+                    String inputUsername = inputCredentials.nextLine();
 
                     System.out.println("Inserisci password:");
-                    String inserisciPsw =  inserimentoCredenziali.nextLine();
+                    String inputPsw =  inputCredentials.nextLine();
 
                     System.out.println("Inserisci saldo:");
-                    double inserisciSaldo = inserimentoCredenziali.nextDouble();
+                    double inputBalance = inputCredentials.nextDouble();
 
                     //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè la registrazione vada a buon fine
-                    if(Utente.registrazione(inserisciNome, inserisciPsw, inserisciSaldo) == true)
+                    if(User.RegistrationJson(inputUsername, inputPsw, inputBalance) == true)
                     {
                         System.out.println("REGISTRAZIONE EFFETTUATA");
-                        controlloDiRitorno=true;
+                        progressControl=true;
 
-                        stampaSaldo(inserisciNome);
+                        PrintBalance(inputUsername);
 
                     }
                     else
@@ -90,23 +92,21 @@ public class Menu
             {
                 System.out.println( "SCELTA NON ESISTENTE");
             }
-            controlloDiRitorno=false;
+            progressControl=false;
         }
 
     }
-    public void stampaSaldo(String inserisciNome) throws IOException {
-        //lau mi restitusisce la funzione saldo ed io gli passo il nome affinchè lui mi restituisca il saldo corrispondente all'utente giusto
-        Utente ute = new Utente("","",0.0);
-        System.out.println("Il tuo saldo è:" + ute.mostraSaldo(inserisciNome));
-        stampaMenu(inserisciNome);
-
-
+    public void PrintBalance(String inputUsername) throws IOException
+    {
+        System.out.println("Il tuo saldo è:" + User.ViewBalanceJson(inputUsername));
+        PrintMenu(inputUsername);
     }
-    public void stampaMenu(String inserisciNome) throws IOException {
-        Scanner scelta = new Scanner(System.in);
-        boolean controlloMenu=false;
-        //Utente ute = new Utente("","",0.0);
-        while(controlloMenu==false)
+    public void PrintMenu(String inputUsername) throws IOException
+    {
+        Scanner input = new Scanner(System.in);
+        boolean menuController=false;
+
+        while(menuController==false)
         {
             System.out.println("-----MENU-----");
             System.out.println("Cosa vuoi fare?");
@@ -115,44 +115,43 @@ public class Menu
             System.out.println("C: Esci");
 
 
-            String sceltaOpzioni = scelta.nextLine();
+            String inputChoice = input.nextLine();
 
-            if (sceltaOpzioni.equalsIgnoreCase("a"))
+            //entrate
+            if (inputChoice.equalsIgnoreCase("a"))
             {
-                Scanner inserimentoEntrate = new Scanner(System.in);
-                Scanner inserimentoNoteEntrate = new Scanner(System.in);
+                Scanner inputAmount = new Scanner(System.in);
+                Scanner inputNote = new Scanner(System.in);
 
                 System.out.println("Inserisci entrate:");
-                double quantita = inserimentoEntrate.nextDouble();
+                double amount = inputAmount.nextDouble();
 
                 System.out.println("Inserisci note:");
-                String note = inserimentoNoteEntrate.nextLine();
+                String note = inputNote.nextLine();
 
-                //richiamo funzione inserimentoEntrate lau
-                Movimento.AggiungiMovimento(inserisciNome, true, quantita, note);
-                //System.out.println("Adesso il saldo attuale è:" + Movimento.AggiungiMovimento(inserisciNome, true, quantita, note));
-
+                //richiamo funzione inputAmount lau
+                Operation.AddAndSubOperationJson(inputUsername, true, amount, note);
             }
-            else if (sceltaOpzioni.equalsIgnoreCase("b"))
+            //uscite
+            else if (inputChoice.equalsIgnoreCase("b"))
             {
-                Scanner inserimentoUscite = new Scanner(System.in);
-                Scanner inserimentoNoteUscite = new Scanner(System.in);
+                Scanner inputAmount = new Scanner(System.in);
+                Scanner inputNote = new Scanner(System.in);
 
                 System.out.println("Inserisci uscite:");
-                double quantita = inserimentoUscite.nextDouble();
+                double amount = inputAmount.nextDouble();
 
                 System.out.println("Inserisci note:");
-                String note = inserimentoNoteUscite.nextLine();
+                String note = inputNote.nextLine();
 
                 //richiamo funzione inserimentoEntrate lau
-                Movimento.AggiungiMovimento(inserisciNome, false, quantita, note);
-                //System.out.println("Adesso il saldo attuale è:" + Movimento.AggiungiMovimento(inserisciNome, false, quantita, note));
+                Operation.AddAndSubOperationJson(inputUsername, false, amount, note);
             }
-
-            else if (sceltaOpzioni.equalsIgnoreCase("c"))
+            //esc
+            else if (inputChoice.equalsIgnoreCase("c"))
             {
                 System.out.println("Log Out effettuato!");
-                controlloMenu=true;
+                menuController=true;
 
             }
             else

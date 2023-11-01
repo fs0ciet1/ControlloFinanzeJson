@@ -6,7 +6,7 @@ public class Main
     public static void main(String[] args) throws IOException {
 
         //====================AVVIO MENU====================//
-        Menu menuAvvio = new Menu();
+        Menu startMenu = new Menu();
 
     }
 }
