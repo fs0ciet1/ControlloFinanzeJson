@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -24,8 +25,8 @@ public class Menu
         {
             System.out.println("Sei già registrato [Y/N]");
 
-            Scanner inserimento = new Scanner(System.in);
-            String YNChoice = inserimento.nextLine();
+            Scanner input = new Scanner(System.in);
+            String YNChoice = input.nextLine();
 
             //login
             if(YNChoice.equalsIgnoreCase("y"))
@@ -35,18 +36,19 @@ public class Menu
                 {
                     System.out.println("Inserisci nome e password");
 
-                    Scanner inserimentoCredenziali = new Scanner(System.in);
-                    String inserisciNome = inserimentoCredenziali.nextLine();
-                    String inserisciPsw =  inserimentoCredenziali.nextLine();
+                    Scanner insertCredentials = new Scanner(System.in);
+                    String insertUsername = insertCredentials.nextLine();
+                    String insertPsw =  insertCredentials.nextLine();
 
                     //controllo che la funzione passata dalla classe Utente restituisca effettivamente true perchè il login vada a buon fine
-                    if(User.LoginJson(inserisciNome, inserisciPsw) == true)
+                    if(User.LoginJson(insertUsername, insertPsw) == true)
                     {
                         System.out.println("LOGIN EFFETTUATO CON SUCCESSO");
                         progressControl=true;
-
+                        PrintOperations(insertUsername);
                         //richiamo la funzione saldo per farmi stampare il saldo attuale dell'utente (inserito al momento della registrazione nella classe Utente)
-                        PrintBalance(inserisciNome);
+                        PrintBalance(insertUsername);
+
                     }
                     else
                     {
@@ -100,6 +102,20 @@ public class Menu
     {
         System.out.println("Il tuo saldo è:" + User.ViewBalanceJson(inputUsername));
         PrintMenu(inputUsername);
+    }
+    public void PrintOperations (String inputUsername)
+    {
+        ArrayList<Operation> operationsUserList = new ArrayList<Operation>();
+        operationsUserList = Operation.ViewOperationJson(inputUsername);
+        System.out.println("I tuoi movimenti sono:");
+        for (int i = 0; i < operationsUserList.size(); i++)
+        {
+            if (operationsUserList.get(i).getOperationType() == true)
+                System.out.println("> Entrate: " + operationsUserList.get(i).getAmount() + " Note: " + operationsUserList.get(i).getNote());
+            else
+                System.out.println("> Uscite: " + operationsUserList.get(i).getAmount() + " Note: " + operationsUserList.get(i).getNote());
+
+        }
     }
     public void PrintMenu(String inputUsername) throws IOException
     {

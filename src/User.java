@@ -1,6 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
-//TODO: creazione di funzione controllo FOR (dentro tutte 3 le funzioni)
+
 public class User
 {
     //=================================== ATTRIBUTI ===================================//

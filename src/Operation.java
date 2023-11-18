@@ -67,22 +67,24 @@ public class Operation
     public static ArrayList<Operation> ViewOperationJson(String username)
     {
         ArrayList<Operation> operationListJson = new ArrayList<Operation>();
-
         operationListJson = JsonFileManupulation.ReadOperationsFile();
+        ArrayList<Operation> operationsUserListTemp = new ArrayList<Operation>();
+
 
         //poi scorrere tutto l'array e se idUtente è diverso da quello che mi è stato passato va eliminato, potrebbe non funziare quindi fare 2 array
         for (int i = 0; i < operationListJson.size(); i++)
         {
-            /*
-            if (listaMovimentiTemp.get(i).getNome()!=nome)
+
+            if (operationListJson.get(i).getUsername().equals(username))
             {
-                listaMovimentiTemp.remove(i);
-            }*/
+                //ogni volta che trova un operazione corrispondere all utente specifico, lo aggiunge a una lista temporanea
+                operationsUserListTemp.add(operationListJson.get(i));
+            }
         }
 
         //quindi qui avrò rimosso tutti i movimenti che non corrispondono a quello specifico utente e posso ritornarla a Menu
         //ritorno la lista aggiornata e non devo scrivere nulla da nessuna parte
-        return operationListJson;
+        return operationsUserListTemp;
     }
 
     //=================================== GETTER ===================================//
